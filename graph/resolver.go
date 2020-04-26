@@ -7,6 +7,8 @@ import "github.com/geeks/GraphQL/graph/model"
 //
 // It serves as dependency injection for your app, add any dependencies you require here.
 
+// Resolver handles the arrays of objects
 type Resolver struct {
-	todos []*model.Todo
+	todos   []*model.Todo
+	Pallete []*model.Food
 }

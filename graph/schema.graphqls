@@ -2,12 +2,26 @@
 #
 # https://gqlgen.com/getting-started/
 
+type Food {
+  id: ID!
+  color: String!
+  serves: Int!
+  
+}
+input NewFood {
+  id: ID!
+  color: String!
+  serves: Int!
+
+}
+
 type Todo {
   id: ID!
   text: String!
   done: Boolean!
   user: User!
 }
+
 
 type User {
   id: ID!
@@ -16,6 +30,7 @@ type User {
 
 type Query {
   todos: [Todo!]!
+  pallete: [Food!]!
 }
 
 input NewTodo {
@@ -25,4 +40,5 @@ input NewTodo {
 
 type Mutation {
   createTodo(input: NewTodo!): Todo!
+  createFood(input: NewFood!): Food!
 }

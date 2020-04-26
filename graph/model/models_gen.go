@@ -2,6 +2,18 @@
 
 package model
 
+type Food struct {
+	ID     string `json:"id"`
+	Color  string `json:"color"`
+	Serves int    `json:"serves"`
+}
+
+type NewFood struct {
+	ID     string `json:"id"`
+	Color  string `json:"color"`
+	Serves int    `json:"serves"`
+}
+
 type NewTodo struct {
 	Text   string `json:"text"`
 	UserID string `json:"userId"`
