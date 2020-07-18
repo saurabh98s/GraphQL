@@ -1,0 +1,13 @@
+type Coffee {
+  id: ID
+  name: String
+  key: String
+  createdAt: Int!
+  updateAt: Int!
+  deletedAt: Int!
+}
+
+input NewCoffee {
+    name: String!
+    key:String!
+}

@@ -1,7 +1,7 @@
 //go:generate go run github.com/99designs/gqlgen
 package graph
 
-import "github.com/geeks/GraphQL/graph/model"
+import "graphql/graph/model"
 
 // This file will not be regenerated automatically.
 //
@@ -9,5 +9,5 @@ import "github.com/geeks/GraphQL/graph/model"
 
 // Resolver handles the arrays of objects
 type Resolver struct {
-	todos   []*model.Todo
+	todos []*model.Todo
 }
