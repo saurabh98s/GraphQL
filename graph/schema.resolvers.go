@@ -22,22 +22,8 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 	return todo, nil
 }
 
-func (r *mutationResolver) CreateFood(ctx context.Context, input model.NewFood) (*model.Food, error) {
-	food := &model.Food{
-		Color:  input.Color,
-		ID:     fmt.Sprintf("T%d", rand.Int()),
-		Serves: input.Serves,
-	}
-	r.Pallete = append(r.Pallete, food)
-	return food, nil
-}
-
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 	return r.todos, nil
-}
-
-func (r *queryResolver) Pallete(ctx context.Context) ([]*model.Food, error) {
-	panic(fmt.Errorf("not implemented"))
 }
 
 func (r *todoResolver) User(ctx context.Context, obj *model.Todo) (*model.User, error) {

@@ -10,5 +10,4 @@ import "github.com/geeks/GraphQL/graph/model"
 // Resolver handles the arrays of objects
 type Resolver struct {
 	todos   []*model.Todo
-	Pallete []*model.Food
 }
