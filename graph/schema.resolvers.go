@@ -13,8 +13,8 @@ import (
 
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
 	todo := &model.Todo{
-		Text:   input.Text,
-		ID:     fmt.Sprintf("T%d", rand.Int()),
+		Text: input.Text,
+		ID:   fmt.Sprintf("T%d", rand.Int()),
 		// UserID: input.UserID, // fix this line
 	}
 	r.todos = append(r.todos, todo)
@@ -22,7 +22,7 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 }
 
 func (r *mutationResolver) CreateCoffee(ctx context.Context, input model.NewCoffee) (*model.Coffee, error) {
-	panic(fmt.Errorf("not implemented"))
+	return r.Services.Coffee().Add(ctx,input)
 }
 
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
