@@ -27,6 +27,6 @@ input NewTodo {
 }
 
 type Mutation {
-  createTodo(input: NewTodo!): Todo!
+  # createTodo(input: NewTodo!): Todo!
   createCoffee(input:NewCoffee!): Coffee!
 }

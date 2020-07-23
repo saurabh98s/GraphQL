@@ -29,14 +29,7 @@ func (coffee *coffee) Add(ctx context.Context, input model.NewCoffee) (*model.Co
 	if err!=nil {
 		logger.Log.WithError(err).Error(http.StatusInternalServerError)
 	}
-	sendResult=&model.Coffee{
-		ID: result.ID,
-		Name: result.Name,
-		Key: result.Key,
-		CreatedAt: result.CreatedAt,
-		DeletedAt: result.DeletedAt,
-		UpdateAt: result.UpdateAt,
-	}
+	sendResult=result.Serialize()
 	return sendResult,nil
 }
 // NewCoffee creates a new copy of the domain type
