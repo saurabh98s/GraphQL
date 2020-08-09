@@ -3,7 +3,6 @@ package main
 import (
 	"graphql/graph"
 	"graphql/graph/generated"
-	"graphql/instance"
 	"log"
 	"net/http"
 	"os"
@@ -13,19 +12,19 @@ import (
 )
 
 const defaultPort = "8080"
+
 func main() {
-	
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = defaultPort
 	}
 
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
-	instance.Init()
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))
 	http.Handle("/query", srv)
 
 	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
-	
+
 }

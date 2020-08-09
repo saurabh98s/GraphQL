@@ -2,20 +2,6 @@
 
 package model
 
-type Coffee struct {
-	ID        *string `json:"id"`
-	Name      *string `json:"name"`
-	Key       *string `json:"key"`
-	CreatedAt int     `json:"createdAt"`
-	UpdateAt  int     `json:"updateAt"`
-	DeletedAt int     `json:"deletedAt"`
-}
-
-type NewCoffee struct {
-	Name string `json:"name"`
-	Key  string `json:"key"`
-}
-
 type NewTodo struct {
 	Text   string `json:"text"`
 	UserID string `json:"userId"`

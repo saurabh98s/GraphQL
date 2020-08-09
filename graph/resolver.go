@@ -2,7 +2,6 @@
 package graph
 
 import (
-	service "graphql/api/services"
 	"graphql/graph/model"
 )
 
@@ -13,5 +12,4 @@ import (
 // Resolver handles the arrays of objects
 type Resolver struct {
 	todos    []*model.Todo
-	Services service.Services
 }
